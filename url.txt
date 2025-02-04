@@ -1,2 +1,2 @@
-# Saya menggunakan Railway, dikarenakan streamlit cloud tidak bisa saya gunakan
-analysisdataproject-joshuams04.up.railway.app 
+# Saya sudah menggunakan alternatif dari streamlit cloud yaitu menggunakan localtunnel dari package node untuk mempublikasikan localhost.
+Untuk IP Publik saya '149.108.201.151'

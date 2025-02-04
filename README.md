@@ -19,3 +19,13 @@ pip install -r requirements.txt
 ```
 streamlit run dashboard.py
 ```
+
+## Setup localtunnel
+```
+npm install localtunnel
+```
+
+## Run localtunnel 
+```
+npx localtunnel --port 8502 
+```
