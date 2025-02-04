@@ -134,7 +134,7 @@ with korelasi_kecepatan_angin:
     correlations = wspm_correlation_pollutants_columns
 
     fig = plt.figure(figsize=(12, 8))
-    sb.heatmap(correlations, cmap='coolwarm')
+    sb.heatmap(correlations, annot=True, cmap='coolwarm')
     plt.tight_layout()
     sl.pyplot(fig)
     with sl.expander("See code"):
@@ -145,7 +145,7 @@ with korelasi_kecepatan_angin:
         correlations = wspm_correlation_pollutants_columns
 
         plt.figure(figsize=(12, 8))
-        sb.heatmap(correlations, cmap='coolwarm')
+        sb.heatmap(correlations, annot=True, cmap='coolwarm')
         plt.tight_layout()
         plt.show()
         """

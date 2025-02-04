@@ -1,4 +1,0 @@
-providers = ["python"] # Tell Nixpacks to use the Python build plan
-
-[start] 
-cmd = "cd dashboard && streamlit run dashboard.py"

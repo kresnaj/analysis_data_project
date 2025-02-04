@@ -1,0 +1,2 @@
+# Saya menggunakan Railway, dikarenakan streamlit cloud tidak bisa saya gunakan
+analysisdataproject-joshuams04.up.railway.app 
