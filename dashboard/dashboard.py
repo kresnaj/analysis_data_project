@@ -4,7 +4,7 @@ import seaborn as sb
 import pandas as pd
 import datetime
 
-sl.title('Hasil Analisis Kualitas Udara Statiun Nongzhanguan, China.')
+sl.title('Hasil Analisis Kualitas Udara Stasiun Nongzhanguan, China.')
 sl.write('Data ini diambil dari [Github](https://github.com/marceloreis/HTI/tree/master)')
 tren_polutan, korelasi_kecepatan_angin = sl.tabs(['Tren ', 'Korelasi Kecepatan Angin'])
 
