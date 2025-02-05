@@ -10,11 +10,12 @@ tren_polutan, korelasi_kecepatan_angin = sl.tabs(['Tren ', 'Korelasi Kecepatan A
 
 
 with sl.sidebar:
+    air_quality_nongzhanguan_df = pd.read_csv('main_data.csv')
     data = {'year': [2015, 2016, 2017, 2018, 2019, 2020]}
-    air_quality_nongzhanguan_df = pd.DataFrame(data)
+    air_quality_df = pd.DataFrame(data)
 
-    min_date = datetime.date(air_quality_nongzhanguan_df["year"].min(), 1, 1)
-    max_date = datetime.date(air_quality_nongzhanguan_df["year"].max(), 12, 31)
+    min_date = datetime.date(air_quality_df["year"].min(), 1, 1)
+    max_date = datetime.date(air_quality_df["year"].max(), 12, 31)
     sl.image("https://cdn.freelogovectors.net/wp-content/uploads/2021/12/kalilogolinux-freelogovectors.net_.png")
     start_date, end_date = sl.date_input(
         label='Rentang Tanggal',
