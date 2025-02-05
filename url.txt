@@ -1,1 +1,1 @@
-https://kresnaj-analysis-data-project-dashboardzay.streamlit.app
+https://analysisdataproject-joshuams04.streamlit.app/
