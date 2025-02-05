@@ -1,2 +1,1 @@
-# Saya sudah menggunakan alternatif dari streamlit cloud yaitu menggunakan localtunnel dari package node untuk mempublikasikan localhost.
-Untuk IP Publik saya '149.108.201.151'
+https://kresnaj-analysis-data-project-dashboardzay.streamlit.app

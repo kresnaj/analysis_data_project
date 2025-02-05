@@ -2,16 +2,35 @@ import streamlit as sl
 import matplotlib.pyplot as plt
 import seaborn as sb
 import pandas as pd
+import datetime
 
 sl.title('Hasil Analisis Kualitas Udara Statiun Nongzhanguan, China.')
 sl.write('Data ini diambil dari [Github](https://github.com/marceloreis/HTI/tree/master)')
 tren_polutan, korelasi_kecepatan_angin = sl.tabs(['Tren ', 'Korelasi Kecepatan Angin'])
 
+# Contoh DataFrame (gantilah dengan dataset aslimu)
+data = {'year': [2015, 2016, 2017, 2018, 2019, 2020]}
+air_quality_nongzhanguan_df = pd.DataFrame(data)
+
+# Konversi 'year' menjadi datetime
+min_date = datetime.date(air_quality_nongzhanguan_df["year"].min(), 1, 1)
+max_date = datetime.date(air_quality_nongzhanguan_df["year"].max(), 12, 31)
+
+with sl.sidebar:
+    sl.image("https://cdn.freelogovectors.net/wp-content/uploads/2021/12/kalilogolinux-freelogovectors.net_.png")
+    start_date, end_date = sl.date_input(
+        label='Rentang Tanggal',
+        min_value=min_date,
+        max_value=max_date,
+        value=[min_date, max_date]
+    )
+
+
 with tren_polutan:
+    air_quality_nongzhanguan_df = pd.read_csv('main_data.csv')
     main_pollutants, other_pollutants = sl.columns(2)
     with main_pollutants:
         sl.header('Polutan Utama')
-        air_quality_nongzhanguan_df = pd.read_csv('main_data.csv')
         tren_air_quality = air_quality_nongzhanguan_df.groupby(by=['year', 'month']).agg({
             'PM2.5': 'mean',
             'PM10': 'mean',
@@ -69,8 +88,8 @@ with tren_polutan:
             sl.code(code, language='python')
 
     with other_pollutants:
-        sl.header("Polutan Lain")
         air_quality_nongzhanguan_df = pd.read_csv('main_data.csv')
+        sl.header("Polutan Lain")
         tren_air_quality = air_quality_nongzhanguan_df.groupby(by=['year', 'month']).agg({
             'PM2.5': 'mean',
             'PM10': 'mean',
@@ -127,8 +146,8 @@ with tren_polutan:
             sl.code(code, language='python')
 
 with korelasi_kecepatan_angin:
-    sl.header('Korelasi kecepatan angin dengan Polutan Utama')
     air_quality_nongzhanguan_df = pd.read_csv('main_data.csv')
+    sl.header('Korelasi kecepatan angin dengan Polutan Utama')
     air_quality_df = pd.DataFrame(air_quality_nongzhanguan_df)
     wspm_correlation_pollutants_columns = air_quality_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3', 'WSPM']].corr()
     correlations = wspm_correlation_pollutants_columns
