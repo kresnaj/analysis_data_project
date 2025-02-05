@@ -8,15 +8,14 @@ sl.title('Hasil Analisis Kualitas Udara Statiun Nongzhanguan, China.')
 sl.write('Data ini diambil dari [Github](https://github.com/marceloreis/HTI/tree/master)')
 tren_polutan, korelasi_kecepatan_angin = sl.tabs(['Tren ', 'Korelasi Kecepatan Angin'])
 
-# Contoh DataFrame (gantilah dengan dataset aslimu)
-data = {'year': [2015, 2016, 2017, 2018, 2019, 2020]}
-air_quality_nongzhanguan_df = pd.DataFrame(data)
-
-# Konversi 'year' menjadi datetime
-min_date = datetime.date(air_quality_nongzhanguan_df["year"].min(), 1, 1)
-max_date = datetime.date(air_quality_nongzhanguan_df["year"].max(), 12, 31)
 
 with sl.sidebar:
+    air_quality_nongzhanguan_df = pd.read_csv('main_data.csv')
+    data = {'year': [2015, 2016, 2017, 2018, 2019, 2020]}
+    air_quality_nongzhanguan_df = pd.DataFrame(data)
+
+    min_date = datetime.date(air_quality_nongzhanguan_df["year"].min(), 1, 1)
+    max_date = datetime.date(air_quality_nongzhanguan_df["year"].max(), 12, 31)
     sl.image("https://cdn.freelogovectors.net/wp-content/uploads/2021/12/kalilogolinux-freelogovectors.net_.png")
     start_date, end_date = sl.date_input(
         label='Rentang Tanggal',
