@@ -3,3 +3,5 @@ pandas==2.2.3
 seaborn==0.13.2
 streamlit==1.41.1
 pipenv==2024.4.1
+pip==25.0
+babel==2.16.0

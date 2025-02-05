@@ -27,5 +27,5 @@ npm install localtunnel
 
 ## Run localtunnel 
 ```
-npx localtunnel --port 8502 
+npx localtunnel --port 8502 --subdomain analisisdatakualitasudara-joshuams04-streamlit
 ```
