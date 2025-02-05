@@ -10,7 +10,6 @@ tren_polutan, korelasi_kecepatan_angin = sl.tabs(['Tren ', 'Korelasi Kecepatan A
 
 
 with sl.sidebar:
-    air_quality_nongzhanguan_df = pd.read_csv('main_data.csv')
     data = {'year': [2015, 2016, 2017, 2018, 2019, 2020]}
     air_quality_nongzhanguan_df = pd.DataFrame(data)
 
